@@ -1,0 +1,11 @@
+# CONFIG_MODULE_SIG=n
+
+obj-m += hooker.o
+
+all:
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+clean:
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+
+test:
+	insmod hooker.ko && echo 'ls:' && ls && rmmod hooker
