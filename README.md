@@ -6,6 +6,7 @@
  you can ovveride the syscall to any function you want.
  
 use this to load the kernel module:
-'''bash
-sudo insmod
-'''
+```bash
+sudo insmod name.ko
+```
+
